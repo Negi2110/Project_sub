@@ -47,7 +47,7 @@ The system consists of two core components:
 
 ### 📤 Outgoing Message Format
 
-```json
+  json
 {
   "type": "message",
   "message": "Hello!"
@@ -55,14 +55,14 @@ The system consists of two core components:
 
 
 ### 📥 Incoming Message Format
- ```json
+  json
  {
   "type": "message",
   "message": "Welcome to the server!"
 }
 
 ### 📬 Welcome Message Example
-```json
+  json
 {
   "type": "welcome",
   "clientId": 1
@@ -102,14 +102,14 @@ The system consists of two core components:
 
  📤 Welcome Message Format (Sent to Clients)
 
-```json
+  json
 {
   "type": "welcome",
   "clientId": 1
 }
 
  📥 Expected Incoming Message Format
-```json
+  json
 {
   "type": "message",
   "message": "Hello from client"
