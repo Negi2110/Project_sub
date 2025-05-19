@@ -19,8 +19,22 @@ The system consists of two core components:
 ## 🔹 Client Module
 
 ### 📁 Structure
+    
+    client/
 
-    ![alt text](image-9.png)
+     ├── include/
+
+     │ ├── ChatClient.h
+
+     │ └── MessageHandler.h
+
+     ├── src/
+
+     │ ├── ChatClient.cpp
+
+     │ ├── MessageHandler.cpp
+
+     │ └── main.cpp
 
 
 ### 🧠 Responsibilities
@@ -86,7 +100,7 @@ The system consists of two core components:
      │ ├── ChatServer.cpp # Server implementation
 
      │ ├── MessageHandler.cpp # Message utilities
-     
+
      │ └── main.cpp # Entry point to start the server
 
 ---
@@ -150,6 +164,7 @@ The MessageHandler class handles:
    📤 Threads: <thread>, <mutex> for concurrency
 
 📌 Notes
+
 -Make sure to call WSAStartup() and WSACleanup() appropriately in main.cpp.
 
 -Supports full-duplex messaging with client-side multithreaded listener.
@@ -163,10 +178,12 @@ The MessageHandler class handles:
 
     Make sure your compiler supports C++17. You can compile and run using:
 🔹 Windows (MinGW or g++):
+
     g++ -std=c++17 -I./include -I../libs ./src/*.cpp -o ChatServer -lws2_32
     ./ChatServer
 
 🔹 Visual Studio Developer Command Prompt:
+
     cl /std:c++17 /I include /I ..\libs src\*.cpp /Fe:ChatServer.exe ws2_32.lib
     ChatServer.exe
 
