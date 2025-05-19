@@ -172,6 +172,38 @@ The MessageHandler class handles:
 -Use console input to send messages to specific clients by ID.
 
 
+🖼️ Architecture Diagrams
+
+   Client Workflow:
+   flowchart TD
+
+    A[Client Start] --> B[Connect to Server]
+
+    B --> C{Connected?}
+
+    C -- Yes --> D[Receive Welcome Message]
+
+    D --> E[Start Receiving Thread]
+
+    C -- No --> F[Retry Connection if Enabled]
+
+    E --> G[Send/Receive JSON Messages]
+
+    Server Workflow:
+     flowchart TD
+
+     A[Server Start] --> B[Listen on Port]
+
+     B --> C[Accept Client Connection]
+
+     C --> D[Assign clientId]
+
+     D --> E[Send Welcome JSON]
+
+     E --> F[Start Client Thread]
+     
+     F --> G[Receive JSON / Route Message]
+
 🚀 How to Compile & Run from Console
 
    ✅ Recommended (With C++17 Support — Required for Structure Binding)
