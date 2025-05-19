@@ -142,13 +142,17 @@ The MessageHandler class handles:
 
 
 🚀 How to Compile & Run from Console
+
    ✅ Recommended (With C++17 Support — Required for Structure Binding)
-   Make sure your compiler supports C++17. You can compile and run using:
+
+    Make sure your compiler supports C++17. You can compile and run using:
 🔹 Windows (MinGW or g++):
     g++ -std=c++17 -I./include -I../libs ./src/*.cpp -o ChatServer -lws2_32
     ./ChatServer
+
 🔹 Visual Studio Developer Command Prompt:
     cl /std:c++17 /I include /I ..\libs src\*.cpp /Fe:ChatServer.exe ws2_32.lib
     ChatServer.exe
+
 
 
