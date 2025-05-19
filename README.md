@@ -90,17 +90,11 @@
     ![alt text](image-6.png)
 
 🔁 Sample Usage
+
 ✅ Starting Server
    ![alt text](image-7.png)
 
 ✅ Running Client
-   > cd ChatApp/client/src
-   > client.exe
-   [Server] Welcome! Your ID is 1
-   > Hello there
-   [Server] Got your message!
-
-
-![alt text](image-8.png)
+   ![alt text](image-8.png)
 
 
