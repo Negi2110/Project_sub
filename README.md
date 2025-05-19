@@ -75,7 +75,7 @@ The system consists of two core components:
 
 ---
 
-## 🧠 Responsibilities
+ 🧠 Responsibilities
 
 - Accepts multiple TCP clients via Winsock.
 - Assigns unique client IDs upon connection.
@@ -87,7 +87,7 @@ The system consists of two core components:
 
 ---
 
-## 🛠️ Key Class: `ChatServer`
+ 🛠️ Key Class: `ChatServer`
 
 | Method                        | Description                                             |
 |-----------------------------|---------------------------------------------------------|
@@ -100,7 +100,7 @@ The system consists of two core components:
 
 ---
 
-## 📤 Welcome Message Format (Sent to Clients)
+ 📤 Welcome Message Format (Sent to Clients)
 
 ```json
 {
@@ -108,14 +108,14 @@ The system consists of two core components:
   "clientId": 1
 }
 
-### 📥 Expected Incoming Message Format
+ 📥 Expected Incoming Message Format
 ```json
 {
   "type": "message",
   "message": "Hello from client"
 }
 
-###🔐 MessageHandler
+🔐 MessageHandler
 The MessageHandler class handles:
 
 🔄 Conversion between strings and JSON
@@ -124,7 +124,7 @@ The MessageHandler class handles:
 
 📦 Clean formatting of messages for network transmission
 
-###🔧 Dependencies
+🔧 Dependencies
   🖥️ Platform: Windows (Winsock2)
 
   🧾 JSON Library: nlohmann/json.hpp
@@ -133,7 +133,7 @@ The MessageHandler class handles:
 
    📤 Threads: <thread>, <mutex> for concurrency
 
-###📌 Notes
+📌 Notes
 -Make sure to call WSAStartup() and WSACleanup() appropriately in main.cpp.
 
 -Supports full-duplex messaging with client-side multithreaded listener.
@@ -141,15 +141,13 @@ The MessageHandler class handles:
 -Use console input to send messages to specific clients by ID.
 
 
-###🚀 How to Compile & Run from Console
+🚀 How to Compile & Run from Console
    ✅ Recommended (With C++17 Support — Required for Structure Binding)
    Make sure your compiler supports C++17. You can compile and run using:
-
-##🔹 Windows (MinGW or g++):
+🔹 Windows (MinGW or g++):
     g++ -std=c++17 -I./include -I../libs ./src/*.cpp -o ChatServer -lws2_32
     ./ChatServer
-
-##🔹 Visual Studio Developer Command Prompt:
+🔹 Visual Studio Developer Command Prompt:
     cl /std:c++17 /I include /I ..\libs src\*.cpp /Fe:ChatServer.exe ws2_32.lib
     ChatServer.exe
 
