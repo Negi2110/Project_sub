@@ -11,15 +11,7 @@
 🔹 Client Module
    📁 Structure
 
-   ChatApp/
-    └── client/
-        ├── include/
-        │   ├── ChatClient.h
-        │   └── MessageHandler.h
-        ├── src/
-        │   ├── ChatClient.cpp
-        │   ├── MessageHandler.cpp
-        │   └── main.cpp
+   ![alt text](image.png)
 🧠 Responsibilities
 -Connects to the server using IP and port.
 
@@ -63,16 +55,7 @@
   🔹 Server Module
 
    📁 Structure
-   ChatApp/
-   └── server/
-       ├── include/
-       │   ├── ChatServer.h
-       │   └── MessageHandler.h
-       ├── src/
-       │   ├── ChatServer.cpp
-       │   ├── MessageHandler.cpp
-       │   └── main.cpp
-
+   ![alt text](image-1.png)
 
 🧠 Responsibilities
 -Listens on a TCP port and accepts multiple clients.
@@ -88,24 +71,12 @@
 -Uses MessageHandler for secure communication.
 
 🛠️ Key Class: ChatServer
-| Method                                   | Description                                                    |
-| ---------------------------------------- | -------------------------------------------------------------- |
-| `start()`                                | Initializes Winsock, binds, listens, accepts clients in thread |
-| `handleClient(clientSocket, clientId)`   | Per-client communication handler                               |
-| `sendMessageToClient(clientId, message)` | Sends JSON message to specified client                         |
-| `broadcastMessage(message)`              | Sends to all clients                                           |
-| `disconnectClient(clientId)`             | Gracefully closes a client's connection                        |
-
+  ![alt text](image-2.png)
 📤 Welcome Message Sent to Client
-   {
-  "type": "welcome",
-  "clientId": 2
-   }
+   ![alt text](image-3.png)
+
 📥 Expected Client Message Format
-   {
-  "type": "message",
-  "message": "Hey Server!"
-   }
+   ![alt text](image-4.png)
 
 🔐 MessageHandler (Used by Both Modules)
     Responsibilities
@@ -113,21 +84,14 @@
     -Optional XOR-style obfuscation (can be upgraded to AES/RSA).
     -Ensures safe transport of JSON strings.
    
-   std::string MessageHandler::encrypt(const std::string& plainText);
-   std::string MessageHandler::decrypt(const std::string& cipherText);
+   ![alt text](image-5.png)
 
 🔧 Dependencies
-    -Windows-only (Winsock2)
-    -nlohmann/json.hpp for JSON parsing
-    -C++17 or later
-    -Multithreading (<thread>, <mutex>)
+    ![alt text](image-6.png)
 
 🔁 Sample Usage
 ✅ Starting Server
-   > cd ChatApp/server/src
-   > server.exe
-   Server started on port 5555
-   Enter client ID to message (or 'exit'):
+   ![alt text](image-7.png)
 
 ✅ Running Client
    > cd ChatApp/client/src
@@ -137,18 +101,6 @@
    [Server] Got your message!
 
 
-   
-| Feature                        | Server | Client |
-| ------------------------------ | ------ | ------ |
-| TCP Socket Communication       | ✅      | ✅      |
-| JSON Message Parsing           | ✅      | ✅      |
-| Encryption/Decryption          | ✅      | ✅      |
-| Multi-threading                | ✅      | ✅      |
-| Multi-client Support           | ✅      | ✅      |
-| Auto Reconnect                 | ❌      | ✅      |
-| Buffer Clearing After Messages | ✅      | ✅      |
-| Client Identification by ID    | ✅      | ✅      |
-| One-to-One Message Routing     | ✅      | ✅      |
-| Console Interface              | ✅      | ✅      |
+![alt text](image-8.png)
 
 
