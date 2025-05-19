@@ -71,7 +71,23 @@ The system consists of two core components:
 ## 🔹 Server Module
 
 
-> ![Server Architecture](assets/server-structure.png)
+> ### 📁 Structure
+
+    server/
+
+     ├── include/
+
+     │ ├── ChatServer.h # Core server logic
+
+     │ └── MessageHandler.h # JSON-based message encoding/decoding
+
+     ├── src/
+
+     │ ├── ChatServer.cpp # Server implementation
+
+     │ ├── MessageHandler.cpp # Message utilities
+     
+     │ └── main.cpp # Entry point to start the server
 
 ---
 
